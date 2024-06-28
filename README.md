@@ -4,7 +4,7 @@ These classes form the major backbone of our computer science curriculum. There 
 
 - INFO-1255 Python
   - This class uses OER and Instructor resources contained in the Python folder.
-    - Python Chapters is the folder which contains the book/framework used for the class.
+  - Python Chapters is the folder which contains the book/framework used for the class.
 - INFO-1510 Intro to Robotics
   - This class is entirely instructor created.
   - Scratch, Arduino C
