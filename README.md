@@ -35,7 +35,8 @@ This repository contains some of the resources for WNCC [Computer Science](https
 
 In the current software development environment, it is important to learn more than one language. Understanding the concepts and solving the problem (computational thinking) is important, not memorizing the syntax. Learning more than one language at a time helps generalize programming concepts and problem solving at a higher level of understanding and synthesis.
 
-Visit our Facebook page: [Facebook WNCC IT Program](https://www.facebook.com/wnccitprogram/)
+- Facebook: [Facebook WNCC IT Program](https://www.facebook.com/wnccitprogram/)
+- YouTube: [YouTube WINCC IT Program](https://www.youtube.com/@williamloringitinstructor)
 
 ### License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
