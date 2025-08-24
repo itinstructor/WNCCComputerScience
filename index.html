@@ -38,6 +38,14 @@ title: C++ Assignments
 
                         <p class="mb-4">Questions? Visit the <a href="https://www.wncc.edu/" target="_blank" rel="noopener">WNCC website</a>.</p>
 
+                        <!-- Table of contents for H4 headings -->
+                        <div id="toc-card" class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Contents</h5>
+                                <ul id="toc" class="list-group list-group-flush"></ul>
+                            </div>
+                        </div>
+
                         <h4>Python Chapters</h4>
                         <ul class="list-group mb-4">
                             {% assign folder = 'Python/Chapters/' %}
@@ -69,6 +77,35 @@ title: C++ Assignments
 
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Build a Table of Contents for all H4 elements on the page
+            (function () {
+                const toc = document.getElementById('toc');
+                if (!toc) return;
+                const headers = Array.from(document.querySelectorAll('h4'));
+                if (!headers.length) {
+                    // No H4s, hide the TOC card
+                    const tocCard = document.getElementById('toc-card');
+                    if (tocCard) tocCard.style.display = 'none';
+                    return;
+                }
+
+                headers.forEach((h, i) => {
+                    // create a stable id based on text and index
+                    const base = h.textContent.trim().toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+                    const id = base || ('heading-' + i);
+                    if (!h.id) h.id = id + (document.getElementById(id) ? ('-' + i) : '');
+
+                    const li = document.createElement('li');
+                    li.className = 'list-group-item';
+                    const a = document.createElement('a');
+                    a.href = '#' + h.id;
+                    a.textContent = h.textContent;
+                    li.appendChild(a);
+                    toc.appendChild(li);
+                });
+            })();
+        </script>
 </body>
 
 </html>
