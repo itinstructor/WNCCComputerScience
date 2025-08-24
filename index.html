@@ -62,6 +62,18 @@ title: WNCC Computer Science
                             {% endfor %}
                         </ul>
 
+                        <h4>Python Assignments</h4>
+                        <ul class="list-group mb-4">
+                            {% assign folder = 'Python/Assignments/' %}
+                            {% for file in site.static_files %}
+                            {% if file.path contains folder %}
+                            <li class="list-group-item">
+                                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+
                         <h4>Java Chapters</h4>
                         <ul class="list-group">
                             {% assign folder = 'Java/Chapters/' %}
@@ -77,6 +89,17 @@ title: WNCC Computer Science
                         <h4>C++ Chapters</h4>
                         <ul class="list-group">
                             {% assign folder = 'CPP/Chapters/' %}
+                            {% for file in site.static_files %}
+                            {% if file.path contains folder %}
+                            <li class="list-group-item">
+                                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <h4>PSystem Administration</h4>
+                        <ul class="list-group mb-4">
+                            {% assign folder = 'System_Administration/' %}
                             {% for file in site.static_files %}
                             {% if file.path contains folder %}
                             <li class="list-group-item">
