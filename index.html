@@ -1,5 +1,114 @@
 ---
 layout: default
+---
+layout: null
+title: WNCC Computer Science
+---
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ page.title }}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body class="bg-light text-body">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">WNCC Computer Science</a>
+            </div>
+        </nav>
+
+        <main class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-9">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h2 class="card-title">Welcome</h2>
+                            <p class="card-text">This site hosts course materials, assignments, and resources for students in the Computer Science program at Western Nebraska Community College.</p>
+
+                            <h5>Get started</h5>
+                            <ul>
+                                <li>Browse the <a href="https://github.com/itinstructor/WNCCComputerScience" target="_blank" rel="noopener">GitHub repository</a></li>
+                                <li>Explore folders for C++, Python, Java, Cybersecurity, and more</li>
+                                <li>Check the <a href="README.md">README</a> for details</li>
+                            </ul>
+
+                            <p class="mb-4">Questions? Visit the <a href="https://www.wncc.edu/" target="_blank" rel="noopener">WNCC website</a>.</p>
+
+                            <!-- Table of contents for H4 headings -->
+                            <div id="toc-card" class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Contents</h5>
+                                    <ul id="toc" class="list-group list-group-flush"></ul>
+                                </div>
+                            </div>
+
+                            <h4>Python Chapters</h4>
+                            <ul class="list-group mb-4">
+                                {% assign folder = 'Python/Chapters/' %}
+                                {% for file in site.static_files %}
+                                {% if file.path contains folder %}
+                                <li class="list-group-item">
+                                    <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+
+                            <h4>C++ Chapters</h4>
+                            <ul class="list-group">
+                                {% assign folder = 'CPP/Chapters/' %}
+                                {% for file in site.static_files %}
+                                {% if file.path contains folder %}
+                                <li class="list-group-item">
+                                    <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Build a Table of Contents for all H4 elements on the page
+            (function () {
+                const toc = document.getElementById('toc');
+                if (!toc) return;
+                const headers = Array.from(document.querySelectorAll('h4'));
+                if (!headers.length) {
+                    // No H4s, hide the TOC card
+                    const tocCard = document.getElementById('toc-card');
+                    if (tocCard) tocCard.style.display = 'none';
+                    return;
+                }
+
+                headers.forEach((h, i) => {
+                    // create a stable id based on text and index
+                    const base = h.textContent.trim().toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+                    const id = base || ('heading-' + i);
+                    if (!h.id) h.id = id + (document.getElementById(id) ? ('-' + i) : '');
+
+                    const li = document.createElement('li');
+                    li.className = 'list-group-item';
+                    const a = document.createElement('a');
+                    a.href = '#' + h.id;
+                    a.textContent = h.textContent;
+                    li.appendChild(a);
+                    toc.appendChild(li);
+                });
+            })();
+        </script>
+    </body>
+
+</html>
+layout: default
 title: C++ Assignments
 ---
 
