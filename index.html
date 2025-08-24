@@ -54,9 +54,10 @@ title: WNCC Computer Science
                         <ul class="list-group mb-4">
                             {% assign folder = 'Python/Chapters/' %}
                             {% for file in site.static_files %}
-                            {% if file.path contains folder %}
+                            {% assign p = file.path | replace: '\\\\', '/' %}
+                            {% if p contains folder %}
                             <li class="list-group-item">
-                                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                                <a href="{{ p | relative_url }}">{{ file.name }}</a>
                             </li>
                             {% endif %}
                             {% endfor %}
@@ -66,9 +67,10 @@ title: WNCC Computer Science
                         <ul class="list-group mb-4">
                             {% assign folder = 'Python/Assignments/' %}
                             {% for file in site.static_files %}
-                            {% if file.path contains folder %}
+                            {% assign p = file.path | replace: '\\\\', '/' %}
+                            {% if p contains folder %}
                             <li class="list-group-item">
-                                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                                <a href="{{ p | relative_url }}">{{ file.name }}</a>
                             </li>
                             {% endif %}
                             {% endfor %}
@@ -78,9 +80,10 @@ title: WNCC Computer Science
                         <ul class="list-group">
                             {% assign folder = 'Java/Chapters/' %}
                             {% for file in site.static_files %}
-                            {% if file.path contains folder %}
+                            {% assign p = file.path | replace: '\\\\', '/' %}
+                            {% if p contains folder %}
                             <li class="list-group-item">
-                                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                                <a href="{{ p | relative_url }}">{{ file.name }}</a>
                             </li>
                             {% endif %}
                             {% endfor %}
@@ -90,9 +93,10 @@ title: WNCC Computer Science
                         <ul class="list-group">
                             {% assign folder = 'CPP/Chapters/' %}
                             {% for file in site.static_files %}
-                            {% if file.path contains folder %}
+                            {% assign p = file.path | replace: '\\\\', '/' %}
+                            {% if p contains folder %}
                             <li class="list-group-item">
-                                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                                <a href="{{ p | relative_url }}">{{ file.name }}</a>
                             </li>
                             {% endif %}
                             {% endfor %}
@@ -101,9 +105,10 @@ title: WNCC Computer Science
                         <ul class="list-group mb-4">
                             {% assign folder = 'System_Administration/' %}
                             {% for file in site.static_files %}
-                            {% if file.path contains folder %}
+                            {% assign p = file.path | replace: '\\\\', '/' %}
+                            {% if p contains folder %}
                             <li class="list-group-item">
-                                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                                <a href="{{ p | relative_url }}">{{ file.name }}</a>
                             </li>
                             {% endif %}
                             {% endfor %}
