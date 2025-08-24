@@ -1,0 +1,15 @@
+# Basic Jekyll config for GitHub Pages
+title: WNCC Computer Science
+email: ''
+description: >-
+  Course materials and resources for the WNCC Computer Science program.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site e.g. https://example.com
+markdown: kramdown
+theme: minima
+plugins: []
+exclude:
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock

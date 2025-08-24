@@ -9,50 +9,66 @@ title: C++ Assignments
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WNCC Computer Science</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap 5.3.7 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <h1>WNCC Computer Science</h1>
-        <p>Welcome to the official GitHub Pages site for WNCC Computer Science resources.</p>
-    </header>
-    <main>
-        <h2>About</h2>
-        <p>This site hosts course materials, assignments, and resources for students in the Computer Science program at
-            Western Nebraska Community College.</p>
-        <h2>Get Started</h2>
-        <ul>
-            <li>Browse the <a href="https://github.com/itinstructor/WNCCComputerScience" target="_blank">GitHub
-                    repository</a></li>
-            <li>Explore folders for C++, Python, Java, Cybersecurity, and more</li>
-            <li>Check the <a href="README.md">README</a> for details</li>
-        </ul>
-        <p>For questions, contact your instructor or visit the <a href="https://www.wncc.edu/" target="_blank">WNCC
-                website</a>.</p>
-        <h1>Python Chapters</h1>
-        <ul>
-            {% assign folder = 'Python/Chapters/' %}
-            {% for file in site.static_files %}
-            {% if file.path contains folder %}
-            <li>
-                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
-            </li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-        <h1>C++ Chapters</h1>
-        <ul>
-            {% assign folder = 'CPP/Chapters/' %}
-            {% for file in site.static_files %}
-            {% if file.path contains folder %}
-            <li>
-                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
-            </li>
-            {% endif %}
-            {% endfor %}
-        </ul>
+<body class="bg-light text-body">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">WNCC Computer Science</a>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-9">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title">Welcome</h2>
+                        <p class="card-text">This site hosts course materials, assignments, and resources for students in
+                            the Computer Science program at Western Nebraska Community College.</p>
+
+                        <h5>Get started</h5>
+                        <ul>
+                            <li>Browse the <a href="https://github.com/itinstructor/WNCCComputerScience" target="_blank" rel="noopener">GitHub repository</a></li>
+                            <li>Explore folders for C++, Python, Java, Cybersecurity, and more</li>
+                            <li>Check the <a href="README.md">README</a> for details</li>
+                        </ul>
+
+                        <p class="mb-4">Questions? Visit the <a href="https://www.wncc.edu/" target="_blank" rel="noopener">WNCC website</a>.</p>
+
+                        <h4>Python Chapters</h4>
+                        <ul class="list-group mb-4">
+                            {% assign folder = 'Python/Chapters/' %}
+                            {% for file in site.static_files %}
+                            {% if file.path contains folder %}
+                            <li class="list-group-item">
+                                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+
+                        <h4>C++ Chapters</h4>
+                        <ul class="list-group">
+                            {% assign folder = 'CPP/Chapters/' %}
+                            {% for file in site.static_files %}
+                            {% if file.path contains folder %}
+                            <li class="list-group-item">
+                                <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
