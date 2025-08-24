@@ -1,3 +1,7 @@
+---
+layout: default
+title: C++ Assignments
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,10 +56,17 @@
 			<li>Check the <a href="README.md">README</a> for details</li>
 		</ul>
 		<p>For questions, contact your instructor or visit the <a href="https://www.wncc.edu/" target="_blank">WNCC website</a>.</p>
+		<h1>C++ Assignments</h1>
+		<ul>
+		  {% assign folder = 'CPP/Assignments/' %}
+		  {% for file in site.static_files %}
+		    {% if file.path contains folder %}
+		      <li>
+		        <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+		      </li>
+		    {% endif %}
+		  {% endfor %}
+		</ul>
 	</main>
 </body>
 </html>
-<!DOCTYPE html> 
-
-
-<H1>WNCCC Computer Science</H1>
