@@ -1,0 +1,2 @@
+alert icmp any any -> $HOME_NET any (msg:"PING FLOOD DETECTION - Excessive ICMP Echo Requests";itype:8;flow:to_server;threshold: type limit, track by_src, count 100, seconds 10;classtype:attempted-dos;sid:21;)
+alert icmp any any -> $HOME_NET any (msg:"PING FLOOD DETECTION - Rapid ICMP Echo Requests";itype:8;flow:to_server;detection_filter: track by_src, count 50, seconds 1;classtype:attempted-dos;sid:122;)

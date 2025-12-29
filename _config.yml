@@ -1,0 +1,14 @@
+title: WNCC Computer Science
+email: ''
+description: >-
+  Course materials and resources for the WNCC Computer Science program.
+url: "https://itinstructor.github.io"
+baseurl: "/WNCCComputerScience"
+markdown: kramdown
+theme: jekyll-theme-primer
+plugins: []
+exclude:
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock

