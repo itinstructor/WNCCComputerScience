@@ -130,9 +130,9 @@ title: WNCC Computer Science
                             {% endfor %}
                         </ul>
 
-                        <h4>IT Technical Support</h4>
-                        <ul class="list-group mb-4">
-                            {% assign folder = 'IT_Technical_Support/' %}
+                        <h4>Ethical Hacking</h4>
+                        <ul class="list-group">
+                            {% assign folder = 'Ethical_Hacking/' %}
                             {% for file in site.static_files %}
                             {% assign p = file.path | replace: '\\\\', '/' %}
                             {% if p contains folder %}
@@ -146,6 +146,19 @@ title: WNCC Computer Science
                         <h4>CyberSecurity_Essentials</h4>
                         <ul class="list-group mb-4">
                             {% assign folder = 'CyberSecurity_Essentials/' %}
+                            {% for file in site.static_files %}
+                            {% assign p = file.path | replace: '\\\\', '/' %}
+                            {% if p contains folder %}
+                            <li class="list-group-item">
+                                <a href="{{ p | relative_url }}">{{ file.name }}</a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+
+                        <h4>IT Technical Support</h4>
+                        <ul class="list-group mb-4">
+                            {% assign folder = 'IT_Technical_Support/' %}
                             {% for file in site.static_files %}
                             {% assign p = file.path | replace: '\\\\', '/' %}
                             {% if p contains folder %}
